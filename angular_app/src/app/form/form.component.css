@@ -1,0 +1,26 @@
+/*.firstname.ng-valid[required] {
+    background-color: lightgreen;
+}
+.firstname.ng-dirty.ng-invalid-required {
+    background-color: red;
+}
+.firstname.ng-dirty.ng-invalid-minlength {
+    background-color: yellow;
+}*/
+
+.ng-valid[required] {
+    border-left: 5px solid #42A948; /* green */
+}
+.ng-invalid {
+    border-left: 5px solid #a94442; /* red */
+}
+
+.age.ng-valid {
+    background-color: lightgreen;
+}
+.age.ng-dirty.ng-invalid-required {
+    background-color: red;
+}
+.age.ng-dirty.ng-invalid-email {
+    background-color: yellow;
+}

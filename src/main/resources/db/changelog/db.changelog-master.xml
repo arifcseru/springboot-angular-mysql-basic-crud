@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="1" author="zouabi">
+
+       <!--  <createTable tableName="person">
+            <column name="id" type="INT" autoIncrement="1"></column>
+            <column name="firstname" type="VARCHAR(50)"></column>
+            <column name="lastname" type="VARCHAR(50)"></column>
+            <column name="age" type="INT"></column>
+            <column name="version" type="INT"></column>
+        </createTable> -->
+
+        <sql endDelimiter=";">
+            insert into person(id,firstname,lastname,age,version) values(1,'firstName1','lastName1',22,0);
+
+            insert into person(id,firstname,lastname,age,version) values(2,'firstName2','lastName2',55,0);
+
+            insert into person(id,firstname,lastname,age,version) values(3,'firstName3','lastName3',22,0);
+
+            insert into person(id,firstname,lastname,age,version) values(4,'firstName4','lastName4',44,0);
+
+            insert into person(id,firstname,lastname,age,version) values(5,'firstName5','lastName5',43,0);
+
+            insert into person(id,firstname,lastname,age,version) values(6,'firstName6','lastName6',66,0);
+
+            insert into person(id,firstname,lastname,age,version) values(7,'firstName7','lastName7',77,0);
+
+            insert into person(id,firstname,lastname,age,version) values(8,'firstName8','lastName8',12,0);
+
+            insert into person(id,firstname,lastname,age,version) values(9,'firstName9','lastName9',6,0);
+
+            insert into person(id,firstname,lastname,age,version) values(10,'firstName10','lastName10',44,0);
+
+           
+        </sql>
+
+    </changeSet>
+
+</databaseChangeLog>

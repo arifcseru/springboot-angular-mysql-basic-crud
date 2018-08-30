@@ -1,0 +1,59 @@
+<div class="col-md-12 tablecontainer">
+  <div class="panel panel-default">
+    <div class="panel-heading"><span class="lead">User Registration Form </span></div>
+    <div class="formcontainer">
+        <form ngForm="myForm" class="form-horizontal">
+
+        <input type="hidden" #hiddenId  [(ngModel)]="idRendered" [ngModelOptions]="{standalone: true}"/>
+        <div class="row">
+          <div class="form-group col-md-12">
+            <label class="col-md-2 control-lable">FirstName</label>
+            <div class="col-md-7">
+              <input type="text"  #firstname [(ngModel)]="firstnameRendered" [ngModelOptions]="{standalone: true}"  name="firstname" class="firstname form-control input-sm" placeholder="Enter your firstname" required minlength="4" maxlength="24" autofocus/>
+                <div class="has-error" (show)="myForm.$dirty">
+                    <span (show)="myForm.firstname.error.required">This is a required field</span>
+                    <span (show)="myForm.firstname.error.minlength">Minimum length required is 3</span>
+                    <span (show)="myForm.firstname.invalid">This field is invalid </span>
+                </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="form-group col-md-12">
+            <label class="col-md-2 control-lable" >LastName</label>
+            <div class="col-md-7">
+              <input type="text"  #lastname [(ngModel)]="lastnameRendered" [ngModelOptions]="{standalone: true}"  class="form-control input-sm" placeholder="Enter your lastname. [This field is validation free]"/>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group col-md-12">
+            <label class="col-md-2 control-lable" >Age</label>
+            <div class="col-md-7">
+              <input type="number" #age [(ngModel)]="ageRendered" [ngModelOptions]="{standalone: true}" name="age" class="age form-control input-sm" placeholder="Enter your age" maxlength="3" minlength="1" required/>
+                <!-- <div class="has-error" (show)="myForm.$dirty">
+                   <span (show)="myForm.age.$error.required">This is a required field</span>
+                   <span (show)="myForm.age.$invalid">This field is invalid </span>
+                 </div>-->
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form-actions floatRight">
+           <!-- <input type="button"  ngModel="updateOrAdd:emit({text:message})" (click)="create1(person)" class="btn btn-primary btn-sm" >-->
+            <button type="button"  (click)="loadData();" class="btn btn-group btn-sm" ngDisabled="myForm.$invalid">Load Data</button>
+              <button type="button"  (click)="passingValuesCreate(hiddenId.value,firstname.value,lastname.value,age.value)" class="btn btn-success btn-sm" ngDisabled="myForm.$invalid">ADD</button>
+              <button type="button"  (click)="editTemp(hiddenId.value,firstname.value,lastname.value,age.value)" class="btn btn-primary btn-sm" ngDisabled="myForm.$invalid">UPDATE</button>
+              <button type="reset"  (click)="reset()" class="btn btn-warning btn-sm" ngDisabled="myForm.dx">Reset Form</button>
+          </div>
+        </div>
+        </form>
+    </div>
+  </div>
+
+
+</div>
